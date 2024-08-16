@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <title>
+        <%=htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <header class="header">
+        <button class="header__btn"><img alt="icon" class="header__btn-icon"></button>
+        <a href="./"><img alt="logo" class="header__logo"></a>
+        <div class="header__info">
+            <a href="tel:+7-863-000-00-00" class="header__info-phone">+7(863) 000 00 00</a>
+            <div class="header__info-address">
+                <span class="header__info-address-city">Ростов-на-Дону</span>
+                <span class="header__info-address-street">ул. Ленина, 2Б</span>
+            </div>
+        </div>
+        <button class="header__button" type="button">Записаться на прием</button>
+    </header>
+    <div class="popup">
+        <form action="./index.php" class="popup__form" method="POST">
+        <textarea name="popup-textarea" class="popup__textarea"></textarea>
+        <button class="popup__button" type="submit">Отправить</button>
+    </form>
+    </div>
+    <main class="main">
+        <div class="main__menu">
+            <ul class="main__menu-list">
+                <li class="main__menu-list-item">О клинике</li>
+                <li class="main__menu-list-item">Услуги</li>
+                <li class="main__menu-list-item">Специалисты</li>
+                <li class="main__menu-list-item">Цены</li>
+                <li class="main__menu-list-item">Контакты</li>
+            </ul>
+            <button class="main__menu-btn" type="button">Записаться на прием</button>
+        </div>
+        <div class="main__feed">
+            <img alt="interior-img" class="main__img">
+            <div class="main__description">
+                <span class="main__description-title">Многопрофильная клиника
+                    для детей и взрослых</span>
+                <span class="main__description-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slider__block">
+                <img alt="slider-img" class="slider__block-img">
+                <div class="slider__block-desc">
+                    <span class="slider__block-desc-title">CHECK-UP</span>
+                    <label class="slider__block-desc-subtitle">для мужчин</label>
+                    <ul class="slider__block-desc-list">
+                        <li class="slider__block-desc-list-item">Гормональный скрининг</li>
+                        <li class="slider__block-desc-list-item">Тестостерон</li>
+                        <li class="slider__block-desc-list-item">Свободный тестостерон</li>
+                        <li class="slider__block-desc-list-item">Глобулин, связывающий половые гормоны</li>
+                    </ul>
+                    <span class="slider__block-desc-price">Всего 2800₽<span
+                            class="slider__block-desc-old-price"><s>3500₽</s></span></span>
+
+                    <div class="slider__block-desc-btns">
+                        <button class="slider__block-desc-btns-1" type="button">Записаться</button>
+                        <button class="slider__block-desc-btns-2" type="button">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__control">
+                <button type="button" class="slider__control-btn"><img alt="slider-arrow"
+                        class="slider__control-btn-left"></button>
+                <span class="slider__control-numbers">
+                    <span class="slider__control-numbers-current">1</span>
+                    /
+                    <span class="slider__control-numbers-total">4</span>
+                </span>
+                <button type="button" class="slider__control-btn"><img alt="slider-arrow"
+                        class="slider__control-btn-right"></button>
+            </div>
+        </div>
+            
+    </main>
+    <footer class="footer">
+        <div class="footer__icons">
+            <a href="./"><img alt="footer-logo" class="footer__icons-logo"></a>
+            <div class="footer__icons-socials">
+                <img alt="footer-logo" class="footer__icons-socials-instagram">
+                <img alt="footer-logo" class="footer__icons-socials-whatsapp">
+                <img alt="footer-logo" class="footer__icons-socials-tg">
+            </div>
+        </div>
+        <ul class="footer__list">
+            <li class="footer__list-item">О клинике</li>
+            <li class="footer__list-item">Услуги</li>
+            <li class="footer__list-item">Специалисты</li>
+            <li class="footer__list-item">Цены</li>
+            <li class="footer__list-item">Контакты</li>
+        </ul>
+
+    </footer>
+</body>
+
+</html>
