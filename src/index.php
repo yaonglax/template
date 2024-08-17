@@ -1,37 +1,39 @@
 <?php 
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
 require_once('./phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
 $message = $_POST['popup-textarea'];
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.yandex.ru';  																							// Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'exampleyaon@yandex.com'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = '19asv7119ass95!'; // Ваш пароль от почты с которой будут отправляться письма
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
+$mail->isSMTP();                                    
+$mail->Host = 'smtp.yandex.ru';  																						
+$mail->SMTPAuth = true;                          
+$mail->Username = 'exampleyaon@yandex.com'; 
+$mail->Password = 'icmguaxxulanpufm'; 
+$mail->SMTPSecure = 'ssl';                     
+$mail->Port = 465; 
 
-$mail->setFrom('exampleyaon@yandex.com'); // от кого будет уходить письмо?
-$mail->addAddress('tafixo7375@iteradev.com');     // Кому будет уходить письмо 
-//$mail->addAddress('ellen@example.com');               // Name is optional
-//$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->setFrom('exampleyaon@yandex.com');
+$mail->addAddress('rbru-metrika@yandex.ru');   
+$mail->isHTML(true);                               
 
-$mail->Subject = 'Заявка с тестового сайта';
+$mail->Subject = 'Сообщение с сайта';
 $mail->Body    = $message;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
     echo 'Error';
 } else {
-    echo 'success';
+    echo 'Success';
 }

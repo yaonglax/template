@@ -1,0 +1,340 @@
+@use 'normalize';
+@import 'variables';
+
+.slider {
+  height: auto;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+
+  &__block {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 49px;
+
+    &-desc {
+      height: 367px;
+      background-color: rgba(226, 240, 239, 1);
+      border-radius: 0 0 5px 5px;
+      padding: 22px 30px 42px 23px;
+      opacity: 1;
+
+
+      &-slide {
+        min-height: 200px;
+        width: 100%;
+        transition: opacity 0.5s ease-in-out;
+
+
+        &--fade-out {
+          opacity: 0;
+        }
+
+        &--fade-in {
+          opacity: 1;
+        }
+      }
+
+      &-title {
+        @include font-stack;
+      }
+
+      &-subtitle {
+        @include font-stack($fontSize: 14px, $lineHeight: 18px);
+        display: block;
+        margin-top: 5px;
+      }
+
+      &-list {
+        padding-inline-start: 15px;
+        text-indent: 0;
+        margin-top: 12px;
+        margin-bottom: 17px;
+        @include font-stack($lineHeight: 20px, $fontSize: 14px, $fontWeight: 400);
+
+        &-item {
+          margin-top: 8px;
+        }
+      }
+
+      &-price {
+        @include font-stack($fontSize: 18px, $lineHeight: 23px, $fontWeight: 400);
+
+      }
+
+      &-old-price {
+        @include font-stack($fontSize: 14px, $lineHeight: 18px, $fontWeight: 400, $fontColor: rgba(134, 134, 134, 1));
+        margin-left: 10px;
+      }
+
+      &-btns {
+        width: 100%;
+        height: 43px;
+        margin-top: 27px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &-1,
+        &-2 {
+          width: 137px;
+          height: 100%;
+          border-radius: 50px;
+          border: 1px solid rgba(13, 188, 145, 1);
+        }
+
+        &-1 {
+          @include font-stack($lineHeight: 21px, $fontSize: 14px, $fontWeight: 400, $fontColor: rgba(255, 255, 255, 1));
+          background-color: rgba(13, 188, 145, 1);
+
+        }
+
+        &-2 {
+          @include font-stack($lineHeight: 21px, $fontSize: 14px, $fontWeight: 400, $fontColor: rgba(13, 188, 145, 1));
+          background-color: transparent;
+        }
+
+        &-1:hover,
+        &-1:active {
+          background-color: rgba(0, 210, 159, 1);
+        }
+
+        &-2:hover,
+        &-2:active {
+          background-color: rgba(13, 188, 145, 1);
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+
+  &__control {
+    width: 169px;
+    height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+
+    &-btn {
+      background-color: transparent;
+      border: none;
+
+    }
+
+    &-numbers {
+      width: 35px;
+      color: rgba(192, 192, 192, 1);
+
+      &-current {
+        @include font-stack($lineHeight: 23px, $fontSize: 18px, $fontWeight: 400)
+      }
+
+      &-total {
+        @include font-stack($lineHeight: 23px, $fontSize: 18px, $fontWeight: 400, $fontColor: rgba(192, 192, 192, 1))
+      }
+    }
+
+
+  }
+}
+
+@media (min-width: 801px) {
+  .slider {
+    height: 440px;
+    width: 80%;
+
+    &__block {
+      position: relative;
+
+      &-desc {
+        clip-path: polygon(0 0, 73% 0, 100% 100%, 0 100%);
+        height: 100.3%;
+        width: 55%;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        border-radius: 5px 0 0 5px;
+        border: none;
+
+        &-subtitle {
+          @include font-stack($lineHeight: 18px, $fontSize: 14px);
+        }
+
+        &-list {
+          margin-top: 16px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &-price {
+          @include font-stack($lineHeight: 23px, $fontSize: 18px, $fontWeight: 400);
+
+        }
+
+        &-btns {
+          margin-top: 15px;
+        }
+      }
+
+      &-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 5px;
+      }
+
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider {
+    height: 608px;
+    width: 915px;
+
+    &__block {
+      height: 540px;
+      margin-top: 100px;
+
+      &-desc {
+        width: 614px;
+        padding: 53px 141px 56px 63px;
+
+        &__slide {
+          min-height: 250px;
+        }
+
+        &-title {
+          @include font-stack($lineHeight: 49px, $fontSize: 38px)
+        }
+
+        &-subtitle {
+          @include font-stack($lineHeight: 29px, $fontSize: 22px);
+        }
+
+        &-list {
+          @include font-stack($lineHeight: 21px, $fontSize: 16px, $fontWeight: 400);
+          gap: 8px;
+        }
+
+        &-price {
+          @include font-stack($lineHeight: 26px, $fontSize: 20px, $fontWeight: 400);
+          margin-top: 33px;
+        }
+
+        &-old-price {
+          @include font-stack($lineHeight: 24px, $fontSize: 16px, $fontWeight: 400, $fontColor: rgba(134, 134, 134, 1))
+        }
+
+        &-btns {
+          margin-top: 26px;
+          height: 43px;
+          width: 406px;
+
+          &-1,
+          &-2 {
+            width: 196px;
+          }
+        }
+      }
+
+      &-img {
+        width: 692px;
+        height: 100%;
+        z-index: 1;
+        border-radius: 0 5px 5px 0;
+      }
+
+    }
+
+    &__control {
+      margin-top: 34px;
+    }
+  }
+}
+
+@media (min-width: 1281px) {
+  .slider {
+    height: 608px;
+    width: 1140px;
+    align-items: center;
+
+    &__block {
+      width: 100%;
+      height: 540px;
+      margin-top: 100px;
+      display: flex;
+
+      &-desc {
+        clip-path: polygon(0 0, 73% 0, 100% 100%, 0 100%);
+        height: 100.1%;
+        width: 614px;
+        padding: 53px 141px 56px 63px;
+        z-index: 2;
+        border-radius: 5px 0 0 5px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &-slide {
+          min-height: 230px;
+        }
+
+        &-title {
+          @include font-stack($lineHeight: 49px, $fontSize: 38px)
+        }
+
+        &-subtitle {
+          @include font-stack($lineHeight: 29px, $fontSize: 22px)
+        }
+
+        &-list {
+          @include font-stack($lineHeight: 21px, $fontSize: 16px, $fontWeight: 400);
+
+        }
+
+        &-price {
+          @include font-stack($lineHeight: 26px, $fontSize: 20px, $fontWeight: 400)
+        }
+
+        &-old-price {
+          @include font-stack($lineHeight: 24px, $fontSize: 16px, $fontWeight: 400, $fontColor: rgba(134, 134, 134, 1))
+        }
+
+        &-btns {
+          min-height: 43px;
+          width: 406px;
+
+          &-1,
+          &-2 {
+            height: 100%;
+            width: 196px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .slider {
+    height: 608px;
+    width: 1140px;
+  }
+}

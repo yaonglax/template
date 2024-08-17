@@ -1,0 +1,7 @@
+@mixin font-stack($lineHeight: 34px, $fontSize: 26px, $fontWeight: 700, $fontColor: rgb(54, 72, 68)) {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    font-size: $fontSize;
+    color: $fontColor;
+  }

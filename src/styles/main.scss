@@ -1,0 +1,208 @@
+@use 'normalize';
+@import 'variables';
+
+.main {
+    width: 100%;
+    height: 1226px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &__menu {
+        width: 100%;
+        height: 100%;
+        padding: 19px;
+        background-color: rgba(69, 146, 127, 0.9);
+        z-index: 5;
+        backdrop-filter: blur(2px);
+        position: absolute;
+
+        &-list {
+            @include font-stack($fontColor: rgba(255, 255, 255, 1), $lineHeight: 24px, $fontWeight: 400, $fontSize: 16px);
+            padding-inline-start: 0;
+
+            &-item {
+                cursor: pointer;
+                margin-top: 10px;
+            }
+        }
+
+        &-btn {
+            margin-top: 39px;
+            width: 196px;
+            height: 43px;
+            background-color: rgba(246, 246, 246, 1);
+            border: none;
+            border-radius: 50px;
+            @include font-stack($fontColor: rgba(31, 161, 129, 1), $lineHeight: 21px, $fontSize: 14px)
+        }
+    }
+
+    &__feed {
+        width: 100%;
+        height: 549px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    &__img {
+        width: 100%;
+        height: 288px;
+    }
+
+    &__description {
+        width: 100%;
+        height: 261px;
+        padding: 34px 18px 53px 17px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(248, 251, 250, 1);
+
+        &-title {
+            @include font-stack;
+            width: 267px;
+        }
+
+        &-label {
+            @include font-stack($lineHeight: 21px, $fontSize: 14px, $fontWeight: 400);
+            margin-top: 9px;
+            width: 340px;
+        }
+    }
+}
+
+
+
+@media (min-width: 480px) {
+    .main__description {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 801px) {
+    .main {
+        height: 765px;
+
+        &__feed {
+            height: 330px;
+            flex-direction: row-reverse;
+        }
+
+        &__img {
+            width: 50%;
+            height: 330px;
+            object-fit: cover;
+        }
+
+        &__description {
+            width: 50%;
+            height: 100%;
+            justify-content: center;
+
+            &-title {
+                @include font-stack($lineHeight: 34px, $fontSize: 26px)
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+        height: 1057px;
+
+        &__feed {
+            height: 443px;
+            flex-direction: row-reverse;
+        }
+
+        &__img {
+            width: 50%;
+            height: 400px;
+            margin-top: 43px;
+        }
+
+        &__description {
+            align-items: center;
+
+            &-title {
+                width: 416px;
+                margin-left: 45px;
+                @include font-stack($lineHeight: 47px, $fontSize: 36px)
+            }
+
+            &-label {
+                width: 367px;
+                @include font-stack($lineHeight: 24px, $fontSize: 16px, $fontWeight: 400)
+            }
+        }
+
+        &__menu {
+            height: 43px;
+            background-color: rgba(31, 161, 129, 1);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+
+            &-list {
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                gap: 30px;
+                margin-left: 40px;
+                padding: 10px 20px;
+
+                &-item {
+                    
+                    padding: 0;
+                    margin: 0;
+                    @include font-stack($fontColor: rgba(255, 255, 255, 1), $lineHeight: 24px, $fontWeight: 400, $fontSize: 16px);
+                }
+            }
+
+            &-btn {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 1281px) {
+    .main {
+
+        &__menu {
+
+            &-list {
+                margin-left: 160px;
+            }
+
+            &-btn {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 1920px) {
+    .main {
+        height: 1276px;
+
+
+        &__feed {
+            height: 576px;
+        }
+
+        &__img {
+            height: 533px;
+        }
+
+        &__menu {
+
+            &-list {
+                margin-left: 390px;
+        }
+    }
+}
+}

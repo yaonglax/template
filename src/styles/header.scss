@@ -1,0 +1,175 @@
+@use 'normalize';
+@import 'variables';
+
+.header {
+    height: 65px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 19px 20px 17px;
+    background-color: rgba(246, 246, 246, 1);
+  
+    &__btn {
+      background-color: transparent;
+      border: none;
+  
+      &-icon {
+        width: 37px;
+        height: 26px;
+      }
+    }
+  
+    &__button {
+      width: 196px;
+      height: 43px;
+      border-radius: 50px;
+      background-color: rgba(13, 188, 145, 1);
+      @include font-stack($lineHeight: 21px, $fontSize: 14px, $fontWeight: 400, $fontColor: rgba(255, 255, 255, 1));
+      display: none;
+      border: none;
+  
+      &:hover,
+      &:active {
+        background-color: rgba(0, 210, 159, 1);
+      }
+    }
+  
+    &__info {
+      width: 138px;
+      height: 38px;
+      text-align: right;
+  
+      & a {
+        @include font-stack($lineHeight: 21px, $fontSize: 16px);
+        text-decoration: none;
+  
+      }
+  
+      &-address {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+  
+        &-city {
+          @include font-stack($lineHeight: 16.82px, $fontSize: 14px, $fontWeight: 400);
+  
+        }
+  
+        &-street {
+          display: none;
+          @include font-stack($lineHeight: 21px, $fontSize: 14px, $fontWeight: 400, $fontColor: rgba(134, 134, 134, 1));
+        }
+      }
+  
+    }
+  }
+
+  
+@media (min-width: 801px) {
+    .header__info {
+      width: 138px;
+      height: 38px;
+      text-align: right;
+  
+      &-address-city {
+        text-align: right;
+      }
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        height: 67px;
+        justify-content: center;
+        padding: 20px 60px;
+        background-color: rgba(246, 246, 246, 1);
+    
+        &__btn {
+          &-icon {
+            display: none;
+          }
+        }
+
+        &__button {
+          display: block;
+          margin-left: 35px;
+        }
+    
+        &__logo {
+          width: 91px;
+          height: 27px;
+          margin-right: 35px;
+        }
+    
+        &__info {
+          width: 823px;
+          text-align: center;
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center;
+    
+          & a {
+            @include font-stack($lineHeight: 24px, $fontSize: 16px, $fontWeight: 400);
+          }
+    
+          &-phone {
+            position: relative;
+    
+            &::before {
+              content: url('../assets/headerWhatsapp.svg');
+              position: absolute;
+              bottom: -35%;
+              left: -130%;
+              right: 0;
+            }
+          }
+    
+          &-address-city {
+            @include font-stack($lineHeight: 21px, $fontSize: 14px, $fontWeight: 400);
+            position: relative;
+    
+            &::before {
+              content: url('../assets/geo.svg');
+              position: absolute;
+              bottom: -3px;
+              left: -18px;
+            }
+    
+          }
+    
+          &-address-street {
+            display: block;
+          }
+        }
+      }
+}
+
+@media (min-width: 1281px) {
+    .header {
+        justify-content: space-around;
+        padding: 20px 150px;
+    
+        &__btn {
+          display: none;
+        }
+      }
+}
+
+@media (min-width: 1920px) {
+    .header {
+        height: 67px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 19px 20px 60px;
+    
+        &__btn {
+          display: none;
+        }
+      }
+}

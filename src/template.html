@@ -26,10 +26,12 @@
         <button class="header__button" type="button">Записаться на прием</button>
     </header>
     <div class="popup">
-        <form action="./index.php" class="popup__form" method="POST">
-        <textarea name="popup-textarea" class="popup__textarea"></textarea>
-        <button class="popup__button" type="submit">Отправить</button>
-    </form>
+        <button type="button" class="popup__button"><img alt="close-button" class="popup__button-img"></button>
+        <h3 class="popup__title">У вас есть какие-то вопросы? Напишите нам на почту!</h3>
+        <form action="http://stasyapl.beget.tech/index.php" class="popup__form" method="POST">
+            <textarea name="popup-textarea" class="popup__form-textarea"></textarea>
+            <button class="popup__form-button" type="submit">Отправить</button>
+        </form>
     </div>
     <main class="main">
         <div class="main__menu">
@@ -53,19 +55,18 @@
         </div>
         <div class="slider">
             <div class="slider__block">
+
                 <img alt="slider-img" class="slider__block-img">
                 <div class="slider__block-desc">
                     <span class="slider__block-desc-title">CHECK-UP</span>
-                    <label class="slider__block-desc-subtitle">для мужчин</label>
-                    <ul class="slider__block-desc-list">
-                        <li class="slider__block-desc-list-item">Гормональный скрининг</li>
-                        <li class="slider__block-desc-list-item">Тестостерон</li>
-                        <li class="slider__block-desc-list-item">Свободный тестостерон</li>
-                        <li class="slider__block-desc-list-item">Глобулин, связывающий половые гормоны</li>
-                    </ul>
-                    <span class="slider__block-desc-price">Всего 2800₽<span
-                            class="slider__block-desc-old-price"><s>3500₽</s></span></span>
-
+                    <div class="slider__block-desc-slide">
+                        <label class="slider__block-desc-subtitle"></label>
+                        <ul class="slider__block-desc-list"></ul>
+                        <div>
+                            <span class="slider__block-desc-price"></span>
+                            <span class="slider__block-desc-old-price"></span>
+                        </div>
+                    </div>
                     <div class="slider__block-desc-btns">
                         <button class="slider__block-desc-btns-1" type="button">Записаться</button>
                         <button class="slider__block-desc-btns-2" type="button">Подробнее</button>
@@ -73,18 +74,18 @@
                 </div>
             </div>
             <div class="slider__control">
-                <button type="button" class="slider__control-btn"><img alt="slider-arrow"
+                <button type="button" class="slider__control-btn prev"><img alt="slider-arrow"
                         class="slider__control-btn-left"></button>
                 <span class="slider__control-numbers">
                     <span class="slider__control-numbers-current">1</span>
                     /
                     <span class="slider__control-numbers-total">4</span>
                 </span>
-                <button type="button" class="slider__control-btn"><img alt="slider-arrow"
+                <button type="button" class="slider__control-btn next"><img alt="slider-arrow"
                         class="slider__control-btn-right"></button>
             </div>
         </div>
-            
+
     </main>
     <footer class="footer">
         <div class="footer__icons">
