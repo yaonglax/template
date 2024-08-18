@@ -220,18 +220,22 @@ document.querySelector('.popup__form').addEventListener('submit', function(e) {
         method: 'POST',
         body: formData
     })
-    .then(response => response.text())  
+    .then(res => res.text())  
     .then(result => {
-        if (result.trim() === 'Success') {
+        const trimmedResult = result.trim();
+        if (trimmedResult === 'Success') {
             alert('Сообщение успешно отправлено!');
-            document.querySelector('.popup__form textarea').value = '';  
-        } else {
+            document.querySelector('.popup__form textarea').value = ''; 
+        } else if (trimmedResult === 'Error: Message cannot be empty') {
+            alert('Ошибка: Сообщение не может быть пустым.');
+        } else if (trimmedResult === 'Error: Failed to send email') {
             alert('Ошибка при отправке сообщения. Попробуйте еще раз.');
         }
-        popup.classList.remove('active'); 
+        popup.classList.remove('active');
     })
     .catch(error => {
         console.error('Ошибка:', error);
         alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
     });
 });
+

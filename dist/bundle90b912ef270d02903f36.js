@@ -2274,13 +2274,16 @@ document.querySelector('.popup__form').addEventListener('submit', function (e) {
   fetch('http://stasyapl.beget.tech/index.php', {
     method: 'POST',
     body: formData
-  }).then(function (response) {
-    return response.text();
+  }).then(function (res) {
+    return res.text();
   }).then(function (result) {
-    if (result.trim() === 'Success') {
+    var trimmedResult = result.trim();
+    if (trimmedResult === 'Success') {
       alert('Сообщение успешно отправлено!');
       document.querySelector('.popup__form textarea').value = '';
-    } else {
+    } else if (trimmedResult === 'Error: Message cannot be empty') {
+      alert('Ошибка: Сообщение не может быть пустым.');
+    } else if (trimmedResult === 'Error: Failed to send email') {
       alert('Ошибка при отправке сообщения. Попробуйте еще раз.');
     }
     popup.classList.remove('active');
@@ -2291,4 +2294,4 @@ document.querySelector('.popup__form').addEventListener('submit', function (e) {
 });
 /******/ })()
 ;
-//# sourceMappingURL=bundlecf1951efdcf97e82513e.js.map
+//# sourceMappingURL=bundle90b912ef270d02903f36.js.map

@@ -17,8 +17,12 @@ $dotenv->load();
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
-$message = $_POST['popup-textarea'];
+$message = trim($_POST['popup-textarea']);
 
+if (empty($message)) {
+    echo 'Error: Message cannot be empty';
+    exit();
+}
 
 $mail->isSMTP();                                    
 $mail->Host = $_ENV['SMTP_HOST'];  																						
